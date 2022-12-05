@@ -1,0 +1,36 @@
+.testimonial-grid{
+    display: grid;
+    gap: 1rem;
+
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+}
+
+.testimonial-grid > div{
+    background-color: #eeee;
+    padding: 2rem;
+}
+
+.testimonial-grid >div:nth-child(odd){
+    background-color: #ddd;
+}
+
+/*SMALLER SCREENS*/
+@media(min-width: 50em){
+    .testimonial-grid{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .testimonial:last-child{
+        grid-column-start: 4;
+        /* grid-row-start: 1;
+        grid-row-end: span 2; */
+        grid-row: 1/3;
+    }
+    
+    /*UTILITY CLASSES*/
+    .grid-col-span-2{
+        grid-column: span 2;
+    }
+}
